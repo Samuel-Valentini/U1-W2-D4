@@ -41,7 +41,7 @@ console.log("Il totale dei numeri casuali è", checkArray(arrayRandom));
 const shoppingCart = [
   { price: 50, name: "item1", id: "#1", quantity: 4 },
   { price: 20, name: "item2", id: "#2", quantity: 2 },
-  { price: 10, name: "item3", id: "#3", quantity: 10 },
+  { price: 80, name: "item3", id: "#3", quantity: 10 },
 ];
 
 function shoppingCartTotal(arr) {
@@ -81,12 +81,11 @@ function maxShoppingCart(arr) {
   let maxPricePosition = 0;
   for (let i = 0; i < arr.length; i++) {
     if (arr[i].price > maxPrice) {
-      maxPrice = arr[i];
+      maxPrice = arr[i].price;
       maxPricePosition = i;
     }
-
-    return arr[maxPricePosition];
   }
+  return arr[maxPricePosition];
 }
 
 console.log(maxShoppingCart(shoppingCart));
