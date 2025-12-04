@@ -110,6 +110,37 @@ console.log(latestShoppingCart(shoppingCart));
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
+function loopUntil(n) {
+  // ! se il parametro inserito è 9, il numero casuale non potrà essere superiore causando un loop,
+  //  per questo motivo cercheremo che sia maggiore o uguale per tre volte di fila nel caso sia 9.
+
+  let counter = 0;
+  let emergencyCounter = 0;
+  while (counter < 3 && emergencyCounter < 1000) {
+    n1 = Math.floor(Math.random() * 10);
+    console.log(n1);
+
+    if (n === 9) {
+      if (n1 >= n) {
+        counter = counter + 1;
+      } else {
+        counter = 0;
+      }
+    } else {
+      if (n1 > n) {
+        counter = counter + 1;
+      } else {
+        counter = 0;
+      }
+    }
+    emergencyCounter += 1;
+  }
+  let riscontro = "Sono servite " + emergencyCounter + " estrazioni, le ultime " + counter + " sono corrette.";
+  return riscontro;
+}
+
+console.log(loopUntil(3));
+
 /* EXTRA 7
 Crea una funzione chiamata "average" che riceve un array come parametro e ne ritorna la media aritmetica. La funzione salta automaticamente i valori non numerici nell'array.
 */
