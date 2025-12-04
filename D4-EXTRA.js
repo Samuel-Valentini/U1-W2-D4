@@ -171,6 +171,30 @@ console.log(average(numberTestSet));
  Crea una funzione chiamata "longest" che trova la stringa più lunga all'interno di un array di stringhe fornito come parametro.
 */
 
+const stringArray = [
+  "gvuyg",
+  "ciao",
+  "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum",
+  "fgndfnvdifhvnbifjnbvdifnvikfdnv",
+  "fgvfdv",
+];
+
+console.log(stringArray.length);
+
+function longest(arr) {
+  let longestCharacters = 0;
+  let longestPosition = 0;
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i].length > longestCharacters) {
+      longestCharacters = arr[i].length;
+      longestPosition = i;
+    }
+  }
+  return longestPosition;
+}
+
+console.log("la stringa più lunga è alla posizione di indice " + longest(stringArray) + " e il suo contenuto è " + stringArray[longest(stringArray)]);
+
 /* SCRIVI QUI LA TUA RISPOSTA */
 
 /* EXTRA 9
