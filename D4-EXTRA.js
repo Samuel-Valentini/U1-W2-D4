@@ -171,6 +171,8 @@ console.log(average(numberTestSet));
  Crea una funzione chiamata "longest" che trova la stringa più lunga all'interno di un array di stringhe fornito come parametro.
 */
 
+/* SCRIVI QUI LA TUA RISPOSTA */
+
 const stringArray = [
   "gvuyg",
   "ciao",
@@ -194,8 +196,6 @@ function longest(arr) {
 }
 
 console.log("la stringa più lunga è alla posizione di indice " + longest(stringArray) + " e il suo contenuto è " + stringArray[longest(stringArray)]);
-
-/* SCRIVI QUI LA TUA RISPOSTA */
 
 /* EXTRA 9
  Crea una funzione per creare un filtro anti-spam per la tua casella email. La funzione riceve un parametro stringa chiamato "emailContent", e torna un valore booleano.
