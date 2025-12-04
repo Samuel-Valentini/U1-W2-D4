@@ -147,6 +147,26 @@ Crea una funzione chiamata "average" che riceve un array come parametro e ne rit
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
+function average(arr) {
+  let numbersArray = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (typeof arr[i] === "number") {
+      numbersArray.push(arr[i]);
+    }
+  }
+
+  const numbersCount = numbersArray.length;
+  let numbersSum = 0;
+  for (let i = 0; i < numbersArray.length; i++) {
+    numbersSum = numbersSum + numbersArray[i];
+  }
+  const ave = numbersSum / numbersCount;
+  return ave;
+}
+
+const numberTestSet = [60.3, 30, 40.9, "gino", 50];
+console.log(average(numberTestSet));
+
 /* EXTRA 8
  Crea una funzione chiamata "longest" che trova la stringa più lunga all'interno di un array di stringhe fornito come parametro.
 */
