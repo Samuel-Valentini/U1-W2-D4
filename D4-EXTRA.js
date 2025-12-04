@@ -40,7 +40,7 @@ console.log("Il totale dei numeri casuali è", checkArray(arrayRandom));
 
 const shoppingCart = [
   { price: 50, name: "item1", id: "#1", quantity: 4 },
-  { price: 20, name: "item2", id: "#2", quantity: 2 },
+  { price: 120, name: "item2", id: "#2", quantity: 2 },
   { price: 80, name: "item3", id: "#3", quantity: 10 },
 ];
 
