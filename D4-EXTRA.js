@@ -173,29 +173,51 @@ console.log(average(numberTestSet));
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
-const stringArray = [
-  "gvuyg",
-  "ciao",
-  "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum",
-  "fgndfnvdifhvnbifjnbvdifnvikfdnv",
-  "fgvfdv",
-];
-
-console.log(stringArray.length);
+const stringArray = ["gvuyg", "ciao", "fgndfnvdifhvnbifjnbvdifnvikfd2v", "fgndfnvdifhvnbifjnbvdifnvikfdnv", "fgvfdv", "fgndfnvdifhvnbifjnbvdifnvikf123"];
 
 function longest(arr) {
   let longestCharacters = 0;
   let longestPosition = 0;
+  const solutionArray = [];
   for (let i = 0; i < arr.length; i++) {
     if (arr[i].length > longestCharacters) {
       longestCharacters = arr[i].length;
       longestPosition = i;
     }
   }
-  return longestPosition;
+
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i].length === longestCharacters) {
+      solutionArray.push(i);
+    }
+  }
+
+  if (solutionArray.length === 1) {
+    let solution = "";
+    solution = "la stringa più lunga è alla posizione di indice " + longestPosition + " e il suo contenuto è '" + arr[longestPosition] + "'";
+    return solution;
+  } else {
+    let solution = "";
+    solution = "le stringhe più lunghe sono alle posizioni di indice " + solutionArray + " e il loro contenuto è " + indexPrinter(solutionArray, arr);
+    return solution;
+  }
 }
 
-console.log("la stringa più lunga è alla posizione di indice " + longest(stringArray) + " e il suo contenuto è " + stringArray[longest(stringArray)]);
+// creo una funzione che prenda in input un array contente delle posizioni e
+// stampi in una stringa tutti i valori delle posizioni corrispondenti di un secondo array.
+
+function indexPrinter(array1, array2) {
+  let output = "";
+  for (let i = 0; i < array1.length; i++) {
+    let n = array1[i];
+    output = output + "'" + array2[n] + "'\n";
+  }
+  return output;
+}
+
+console.log(longest(stringArray));
+
+// console.log("la stringa più lunga è alla posizione di indice " + longest(stringArray) + " e il suo contenuto è " + stringArray[longest(stringArray)]);
 
 /* EXTRA 9
  Crea una funzione per creare un filtro anti-spam per la tua casella email. La funzione riceve un parametro stringa chiamato "emailContent", e torna un valore booleano.
