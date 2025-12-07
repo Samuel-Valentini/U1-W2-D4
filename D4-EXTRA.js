@@ -293,3 +293,23 @@ function matrixGenerator(x, y) {
 
 console.log(matrixGenerator(4, 5));
 console.log(matrixGenerator(4, 5).length);
+
+// Provo ora in autonomia a sperimentare con array multidimensionali.
+// L'obiettivo è quello di ottenere una tavola che mostri i risultati delle moltiplicazioni fino a due numeri interi dati
+// formata da due array annidati. Ad esempio tableM(2,3) deve dare come risultato [[1,2,3],[2,4,6]]
+
+function tableM(n, m) {
+  const matrixOfMatrix = [];
+  let matrix = [];
+  const v = 1;
+  for (let v = 1; v <= n; v++) {
+    for (let i = 0; i < m; i++) {
+      matrix.push((i + 1) * v);
+    }
+    matrixOfMatrix.push(matrix);
+    matrix = [];
+  }
+  return matrixOfMatrix;
+}
+
+console.log(tableM(10, 10));
