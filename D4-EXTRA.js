@@ -313,3 +313,29 @@ function tableM(n, m) {
 }
 
 console.log(tableM(10, 10));
+console.log(tableM(10, 10).flat(Infinity).length);
+
+// fine esperimento 1
+// proviamo ora ad estendere la logica ad una terza dimensione.
+
+function table3M(n, m, o) {
+  const matrixOfMatrixOfMatrix = [];
+  let matrixOfMatrix = [];
+  let matrix = [];
+
+  for (let w = 1; w <= o; w++) {
+    for (let v = 1; v <= n; v++) {
+      for (let i = 0; i < m; i++) {
+        matrix.push((i + 1) * v * w);
+      }
+      matrixOfMatrix.push(matrix);
+      matrix = [];
+    }
+    matrixOfMatrixOfMatrix.push(matrixOfMatrix);
+    matrixOfMatrix = [];
+  }
+  return matrixOfMatrixOfMatrix;
+}
+
+console.log(table3M(10, 10, 10));
+console.log(table3M(10, 10, 10).flat(Infinity).length);
