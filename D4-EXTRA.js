@@ -222,6 +222,8 @@ console.log(longest(stringArray));
  La funzione deve ritornare true se "emailContent" non contiene le parole "SPAM" o "SCAM".
 */
 
+/* SCRIVI QUI LA TUA RISPOSTA */
+
 function antiSpam(emailContent) {
   if (emailContent.toLowerCase().includes("spam") || emailContent.toLowerCase().includes("scam")) {
     return false;
@@ -240,11 +242,11 @@ console.log(antiSpam(emailT2));
 console.log(antiSpam(emailT3));
 console.log(antiSpam(emailT4));
 
-/* SCRIVI QUI LA TUA RISPOSTA */
-
 /* EXTRA 10
  Scrivi una funzione che riceve una data come parametro, e calcola il numero di giorni passati da quella data.
 */
+
+/* SCRIVI QUI LA TUA RISPOSTA */
 
 function daysGone(initialDate) {
   const date1 = new Date(initialDate);
@@ -267,8 +269,6 @@ console.log(roundedDaysGone("2025-11-1"));
 console.log(daysGone("2024-12-7"));
 console.log(roundedDaysGone("2024-12-7"));
 
-/* SCRIVI QUI LA TUA RISPOSTA */
-
 /* EXTRA 11
  Scrivi una funzione chiamata "matrixGenerator" che riceve come parametri due numeri interi, "x" e "y".
  Il risultato deve essere una matrice di "x" volte "y", e i valori devono rispecchiare gli indici della posizione all'interno della matrice.
@@ -278,3 +278,18 @@ console.log(roundedDaysGone("2024-12-7"));
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+
+function matrixGenerator(x, y) {
+  const matrix = [];
+
+  for (let n = 0; n < y; n++) {
+    for (let i = 0; i < x; i++) {
+      matrix.push(n.toString() + i.toString());
+    }
+  }
+
+  return matrix;
+}
+
+console.log(matrixGenerator(4, 5));
+console.log(matrixGenerator(4, 5).length);
