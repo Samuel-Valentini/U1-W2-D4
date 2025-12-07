@@ -217,12 +217,28 @@ function indexPrinter(array1, array2) {
 
 console.log(longest(stringArray));
 
-// console.log("la stringa più lunga è alla posizione di indice " + longest(stringArray) + " e il suo contenuto è " + stringArray[longest(stringArray)]);
-
 /* EXTRA 9
  Crea una funzione per creare un filtro anti-spam per la tua casella email. La funzione riceve un parametro stringa chiamato "emailContent", e torna un valore booleano.
  La funzione deve ritornare true se "emailContent" non contiene le parole "SPAM" o "SCAM".
 */
+
+function antiSpam(emailContent) {
+  if (emailContent.toLowerCase().includes("spam") || emailContent.toLowerCase().includes("scam")) {
+    return false;
+  } else {
+    return true;
+  }
+}
+
+const emailT1 = "questa email è un sofisticato spam";
+const emailT2 = "questa email è un sofisticato scam";
+const emailT3 = "questa email va bene";
+const emailT4 = "questa email è un sofisticato sPaM";
+
+console.log(antiSpam(emailT1));
+console.log(antiSpam(emailT2));
+console.log(antiSpam(emailT3));
+console.log(antiSpam(emailT4));
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
