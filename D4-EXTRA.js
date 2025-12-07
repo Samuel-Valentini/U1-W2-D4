@@ -337,5 +337,94 @@ function table3M(n, m, o) {
   return matrixOfMatrixOfMatrix;
 }
 
-console.log(table3M(10, 10, 10));
-console.log(table3M(10, 10, 10).flat(Infinity).length);
+console.log(table3M(10, 2, 1));
+console.log(table3M(10, 2, 1).flat(Infinity).length);
+
+// logica applicata
+//  ne creo ora una versione fino a 9 dimensioni
+
+console.log("new tests");
+
+function superTable(a, b, c, d, e, f, g, h, l) {
+  if (a === undefined) {
+    a = 1;
+  }
+  if (b === undefined) {
+    b = 1;
+  }
+  if (c === undefined) {
+    c = 1;
+  }
+  if (d === undefined) {
+    d = 1;
+  }
+  if (e === undefined) {
+    e = 1;
+  }
+  if (f === undefined) {
+    f = 1;
+  }
+  if (g === undefined) {
+    g = 1;
+  }
+  if (h === undefined) {
+    h = 1;
+  }
+  if (l === undefined) {
+    l = 1;
+  }
+  const matrix9 = [];
+  let matrix8 = [];
+  let matrix7 = [];
+  let matrix6 = [];
+  let matrix5 = [];
+  let matrix4 = [];
+  let matrixOfMatrixOfMatrix = [];
+  let matrixOfMatrix = [];
+  let matrix = [];
+
+  for (let n6 = 1; n6 <= l; n6++) {
+    for (let n5 = 1; n5 <= h; n5++) {
+      for (let n4 = 1; n4 <= g; n4++) {
+        for (let n3 = 1; n3 <= f; n3++) {
+          for (let n2 = 1; n2 <= e; n2++) {
+            for (let n1 = 1; n1 <= d; n1++) {
+              for (let w = 1; w <= c; w++) {
+                for (let v = 1; v <= b; v++) {
+                  for (let i = 0; i < a; i++) {
+                    matrix.push((i + 1) * v * w * n1 * n2 * n3 * n4 * n5 * n6);
+                  }
+                  matrixOfMatrix.push(matrix);
+                  matrix = [];
+                }
+                matrixOfMatrixOfMatrix.push(matrixOfMatrix);
+                matrixOfMatrix = [];
+              }
+              matrix4.push(matrixOfMatrixOfMatrix);
+              matrixOfMatrixOfMatrix = [];
+            }
+            matrix5.push(matrix4);
+            matrix4 = [];
+          }
+          matrix6.push(matrix5);
+          matrix5 = [];
+        }
+        matrix7.push(matrix6);
+        matrix6 = [];
+      }
+      matrix8.push(matrix7);
+      matrix7 = [];
+    }
+    matrix9.push(matrix8);
+    matrix8 = [];
+  }
+  return matrix9;
+}
+
+console.log(superTable(10, 10, 10, 1, 1, 1, 1, 1, 1));
+console.log(superTable(10, 10, 10).flat(Infinity).length);
+
+console.log(superTable(2, 2, 2, 2, 2, 2, 2, 2, 2));
+console.log(superTable(2, 2, 2, 2, 2, 2, 2, 2, 2).flat(Infinity).length);
+
+console.log(superTable());
