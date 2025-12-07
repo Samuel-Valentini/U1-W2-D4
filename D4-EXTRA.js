@@ -246,6 +246,27 @@ console.log(antiSpam(emailT4));
  Scrivi una funzione che riceve una data come parametro, e calcola il numero di giorni passati da quella data.
 */
 
+function daysGone(initialDate) {
+  const date1 = new Date(initialDate);
+  const today = new Date();
+  const resultInMilliseconds = today - date1;
+  const days = resultInMilliseconds / (1000 * 60 * 60 * 24);
+  return days;
+}
+
+function roundedDaysGone(initialDate) {
+  const result = Math.floor(daysGone(initialDate));
+  return result;
+}
+
+console.log(daysGone("2025-12-6"));
+console.log(roundedDaysGone("2025-12-6"));
+console.log(daysGone("2025-11-1"));
+console.log(roundedDaysGone("2025-11-1"));
+
+console.log(daysGone("2024-12-7"));
+console.log(roundedDaysGone("2024-12-7"));
+
 /* SCRIVI QUI LA TUA RISPOSTA */
 
 /* EXTRA 11
